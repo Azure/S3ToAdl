@@ -38,7 +38,7 @@ docker run --name *redisName* -d -v /dir:/data  redis --appendonly yes
 docker run -v '/dir:/tempdir' -e AWS_ACCESS_KEY_ID='access_Key_Id' -e AWS_SECRET_ACCESS_KEY='secret_access_key' -e AWS_REGION='region' -e AWS_BUCKET_NAME='bucket_name' -e AZURE_CLIENT_ID='azure_cliet_id' -e AZURE_DOMAIN='Azure_domain' -e AZURE_SECRET='azure_secret' -e AZURE_ADL_ACCOUNT_NAME='adl_accountName' -e TEMP_FOLDER='/tempdir' -p 80:4200 **image name**
 ```
 If running with Redis add : `--link *redisName*:redis` to the run command.</br>
-Go to http://<host-ip>/ to check out the copy status and progress.</br>
+Go to http://[host-ip]/ to check out the copy status and progress.</br>
 The -v flag mounts the current working directory into the container. [Documentation](https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v-read-only)<br/>
 4. Docker image is also available at Docker Hub - `docker pull catalystcode/s3toadl`<br/>
 At the end of the run log file will be written to TEMP_FOLDER.
