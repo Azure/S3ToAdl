@@ -1,0 +1,56 @@
+{
+  "name": "s3toadl",
+  "version": "0.0.1",
+  "description": "Move Data from S3 to Azure Data Lake",
+  "main": "index.js",
+  "typings": "src/index",
+  "dependencies": {
+    "async-await-parallel": "^1.0.0",
+    "aws-sdk": "^2.88.0",
+    "azure-arm-datalake-store": "^2.1.0-preview",
+    "express": "^4.15.4",
+    "express-generator": "^4.15.0",
+    "fs": "^0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-tslint": "^8.1.1",
+    "gulp-typescript": "^3.2.1",
+    "mock-aws-s3": "^2.5.1",
+    "path": "^0.12.7",
+    "performance-now": "^2.1.0",
+    "redis": "^2.8.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^3.0.0",
+    "socket.io": "^2.0.3",
+    "tslint": "^5.5.0",
+    "watchjs": "0.0.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.0",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "typescript": "^2.4.2"
+  },
+  "scripts": {
+    "test": "mocha lib/test/**/**.js --reporter spec",
+    "lint": "tslint */*.ts -t verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatalystCode/S3-to-adl-data-transfer.git"
+  },
+  "keywords": [
+    "DataLake",
+    "S3",
+    "Azure"
+  ],
+  "author": "ilanak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatalystCode/S3-to-adl-data-transfer/issues"
+  },
+  "homepage": "https://github.com/CatalystCode/S3-to-adl-data-transfer#readme"
+}

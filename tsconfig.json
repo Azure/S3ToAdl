@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "outDir": "lib",
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}

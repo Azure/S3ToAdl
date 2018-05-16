@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>S3 To Azure Data Lake Incremental Copy</h1>
+    </div>
+    <div class="panel" id="batch-number"></div>
+  </header>
+  <div class="log" id="log"></div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/css-mint/1.4.3/css-mint.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    var objDiv = document.getElementById("log");
+
+    socket.on('batchChange', function (data) {
+      var div = document.getElementById("batch-number");
+      div.innerHTML = `<span class=\"batch\"> Proccesing Batch #${data.batchNumber}</span>
+                       <span> Total uploaded files: ${data.uploadedCount}</span>`;
+    });
+    socket.on('log', function (data) {
+      var div = document.getElementById("log");
+      div.innerHTML += `<span>${data.timestamp}</span>`
+      div.innerHTML += `<span style="color:${getColor(data.level)}; margin-left:30px">${data.message}</span></br>`;
+      objDiv.scrollTop = objDiv.scrollHeight;
+    });
+
+    function getColor(level) {
+      switch (level) {
+        case "info":
+          return "green";
+          break;
+        case "warning":
+          return "yellow";
+          break;
+        case "error":
+          return "red";
+          break;
+        default:
+          return "black";
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>
